@@ -19,6 +19,15 @@ body {
     color: #ffff00;
 }
 
+.logo:hover {
+    transform: scale(1.025);
+    transition: 0.2s;
+}
+
+.logo {
+    transition: 0.2s;
+}
+
 img {
     image-rendering: pixelated;
 }
@@ -30,6 +39,7 @@ a {
 }
 a:hover {
     color: rgb(2, 209, 209);
+    border-bottom: solid 2px rgb(2, 209, 209);
 }
 
 hr {
