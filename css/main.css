@@ -4,6 +4,7 @@
 }
 body {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/screenshot.png');
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -26,6 +27,9 @@ a {
     color: aqua;
     text-decoration: none;
     border-bottom: solid 2px aqua;
+}
+a:hover {
+    color: rgb(2, 209, 209);
 }
 
 hr {
