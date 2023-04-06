@@ -11,10 +11,21 @@ body {
     margin: 0
 }
 
-h1 h2 h3 h4 h5 h6 {
-    font-style: normal;
-}
-
 img {
     image-rendering: pixelated;
+}
+
+a {
+    color: aquamarine;
+    text-decoration: none;
+    border-bottom: solid 2px aquamarine;
+}
+
+hr {
+    width: 50%;
+    border: solid 1px burlywood;
+}
+
+i {
+    color: gray
 }

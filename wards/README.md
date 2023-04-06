@@ -1,0 +1,2 @@
+# Custom wards go in here!
+I think it could just be a folder with a HTML file & a json or whatever. Will have to see. We can make a template first. Perhaps users could make JSON files that a script reads and turns into a ward.
