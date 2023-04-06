@@ -50,3 +50,25 @@ hr {
 i {
     color: gray
 }
+
+button {
+    border: none;
+    background: none;
+    color: white;
+    font-family: RD;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+button:active span {
+    color: #21b24b
+}
+
+button:hover:before {
+    color: #21b24b;
+    content: '> '
+}
+button:hover:after {
+    color: #21b24b;
+    content: ' <'
+}
