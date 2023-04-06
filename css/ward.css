@@ -8,7 +8,8 @@ body {
     font-family: RD;
     text-align: center;
 
-    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/screenshot.png');
+    image-rendering: pixelated;
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/blissful.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -94,8 +95,13 @@ button:hover:after {
 }
 
 .master {
-    border: 5px solid red;
-    margin: auto 0;
     display: flex;
+    height: 98%;
     justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }

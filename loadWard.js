@@ -5,7 +5,6 @@ function loadWard(wardObject) {
         bgm.loop = true
         bgm.play() //du dudududu dudu dudududu
     }
-    
     if (wardObject.name && wardObject.data) {
         document.title = wardObject.name
 
@@ -21,9 +20,9 @@ function loadWard(wardObject) {
 
             const levelInfo = document.createElement('p')
 
-            if (level.type=="exit") { levelDiv.classList.add('exitlevel') ; levelInfo.innerText = "Exit this Ward" ; levelDiv.appendChild(levelInfo) ; return levelsDiv.appendChild(levelDiv) }
+            if (level.type=="exit") { levelDiv.classList.add('exitlevel') ; levelInfo.innerHTML = `<a href="#" onclick="const trans = new Audio('../../assets/sounds/sndTransitionIn.mp3');trans.volume=0.25;trans.play();setTimeout(()=>{window.location = '../../'},1200)">Exit this Ward</a>` ; levelDiv.appendChild(levelInfo) ; return levelsDiv.appendChild(levelDiv) }
 
-            levelInfo.innerHTML = `<span class="nickname">${level.nickname}</span> <span class="levelname">${level.name}</span><br><button onclick=";navigator.clipboard.writeText('${level.download}')"><span>Copy Link</span></button>`
+            levelInfo.innerHTML = `<span class="nickname">${level.nickname}</span> <span class="levelname">${level.name}</span><br><button onclick="const CopyLink = new Audio('../../assets/sounds/sndPagerButton.mp3');CopyLink.volume = 0.25;CopyLink.play();navigator.clipboard.writeText('${level.download}')"><span>Copy Link</span></button>`
             levelDiv.appendChild(levelInfo)
 
             const charImg = document.createElement('img')
