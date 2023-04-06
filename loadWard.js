@@ -22,9 +22,9 @@ function loadWard(wardObject) {
 
             if (level.type=="exit") { levelDiv.classList.add('exitlevel') ; levelInfo.innerHTML = `<a href="#" onclick="const trans = new Audio('../../assets/sounds/sndTransitionIn.mp3');trans.volume=0.25;trans.play();setTimeout(()=>{window.location = '../../'},1200)">Exit this Ward</a>` ; levelDiv.appendChild(levelInfo) ; return levelsDiv.appendChild(levelDiv) }
 
-            levelInfo.innerHTML = `<span class="nickname">${level.nickname}</span> <span class="levelname">${level.name}</span><br><button onclick="const CopyLink = new Audio('../../assets/sounds/sndPagerButton.mp3');CopyLink.volume = 0.25;CopyLink.play();navigator.clipboard.writeText('${level.download}')"><span>Copy Link</span></button>`
+            levelInfo.innerHTML = `<span class="nickname">${level.nickname}</span> <span class="levelname">${level.name}</span><br><button onmouseenter="const SelectPatient = new Audio('../../assets/sounds/sndSelectPatient.mp3');SelectPatient.volume = 0.25;SelectPatient.play()" onclick="const CopyLink = new Audio('../../assets/sounds/sndPagerButton.mp3');CopyLink.volume = 0.25;CopyLink.play();navigator.clipboard.writeText('${level.download}')"><span>Copy Link</span></button>`
             levelDiv.appendChild(levelInfo)
-
+            
             const charImg = document.createElement('img')
             charImg.src = level.character
             charImg.classList.add('character')
