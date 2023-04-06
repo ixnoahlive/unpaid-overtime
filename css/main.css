@@ -4,6 +4,9 @@
 }
 body {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/screenshot.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: white;
     font-family: RD;
     text-align:center;
