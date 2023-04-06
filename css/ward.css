@@ -1,0 +1,101 @@
+@font-face {
+    font-family: RD;
+    src: url('../assets/fonts/main.ttf');
+}
+
+body {
+    zoom: 150%;
+    font-family: RD;
+    text-align: center;
+
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/screenshot.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000;
+
+    color: white;
+}
+
+.levels {
+    display: flex;
+    width: 99.4%;
+    height: 30vh;
+}
+
+.level {
+    height: 100%;
+    margin: 5px;
+    max-width: 250px;
+    min-width: 150px;
+}
+/* Horrid css will open issue later if theres none open it for me <3 */
+.exitlevel {
+    line-height: 1000%; 
+    vertical-align: middle;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background: none;
+    color: white;
+    font-family: RD;
+    font-size: 14pt;
+    cursor: pointer;
+
+    text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000;
+}
+
+button:active {
+    color: #21b24b;
+    content: 'Copied!'
+}
+
+button:hover:before {
+    color: #21b24b;
+    content: '> '
+}
+button:hover:after {
+    color: #21b24b;
+    content: ' <'
+}
+
+.nickname {
+    color: #cbff17;
+}
+
+.levelname {
+    color: #6af3f4
+}
+
+.character {
+    image-rendering: pixelated;
+    height: 40%;
+
+}
+
+.master {
+    border: 5px solid red;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+}

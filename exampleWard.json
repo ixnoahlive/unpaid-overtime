@@ -1,8 +1,0 @@
-{
-    "wardName":"Test Ward",
-    "wardAuthor":"ixNoah",
-    "wardData":[
-        {"type":"exit"},
-        {"type":"level","name":"My Level","artist":"Name","author":"ixNoah","difficulty":"easy","download":"url"}
-    ]
-}

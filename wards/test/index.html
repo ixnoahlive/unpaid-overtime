@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/ward.css">
+        <meta property="og:image" content="https://noahthenerd.github.io/unpaid-overtime/assets/ada.png">
+        <meta property="og:title" content="Unpaid Overtime">
+        <meta property="og:description" content="A more fun & exciting way to play custom levels in Rhythm Doctor.">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" id="customCol" content="#24A4E3">
+        <link rel="icon" type="image/x-icon" href="../../assets/ada.png">
+    </head>
+    <body>
+
+    </body>
+    <script type="module">
+        import loadWard from '../../loadWard.js'
+        const CopyLink = new Audio('../../assets/sounds/sndPagerButton.mp3')
+        CopyLink.volume = 0.25
+
+        function updateClipboard(newClip) {
+            navigator.clipboard.writeText(newClip).then(() => {
+                alert('Successfully copied!')
+            }, () => {
+                alert(`We couldn't copy the level link to your clipboard!`)
+            });
+        }
+
+        const Ward = {
+            name: "My Cool Ward",
+            author: 'ixNoah',
+            data: [
+                {type: "exit"},
+                {type: "level", nickname: "1-1", name: "Venom", artist: "Kairikibear", character: "../../assets/characters/samurai.gif", author: "ixNoah", download: "https://cdn.discordapp.com/attachments/611380148431749151/1091021903403159625/Kairikibear_-_Venom.rdzip"},
+            ]
+        }
+        
+        loadWard(Ward)
+    </script>
+</html>
