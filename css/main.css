@@ -1,0 +1,20 @@
+@font-face {
+    font-family: RD;
+    src: url('../assets/fonts/main.ttf');
+}
+body {
+    background-color: black;
+    color: #ffff00;
+    font-family: RD;
+    text-align:center;
+    padding: 0vh;
+    margin: 0
+}
+
+h1 h2 h3 h4 h5 h6 {
+    font-style: normal;
+}
+
+img {
+    image-rendering: pixelated;
+}
