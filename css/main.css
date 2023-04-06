@@ -4,11 +4,15 @@
 }
 body {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/screenshot.png');
-    color: #ffff00;
+    color: white;
     font-family: RD;
     text-align:center;
     padding: 0vh;
     margin: 0
+}
+
+.yellow {
+    color: #ffff00;
 }
 
 img {
@@ -16,14 +20,14 @@ img {
 }
 
 a {
-    color: aquamarine;
+    color: aqua;
     text-decoration: none;
-    border-bottom: solid 2px aquamarine;
+    border-bottom: solid 2px aqua;
 }
 
 hr {
     width: 50%;
-    border: solid 1px burlywood;
+    border: solid 1px #d75f0a;
 }
 
 i {
