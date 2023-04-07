@@ -3,7 +3,7 @@ function loadWard(wardObject) {
         const bgm = new Audio('../../assets/music/track1.mp3')
         bgm.volume = 0.25
         bgm.loop = true
-        bgm.play() //du dudududu dudu dudududu
+        bgm.play() //du dudududu  dudu    dudududu
     }
     if (wardObject.name && wardObject.data) {
         document.title = wardObject.name

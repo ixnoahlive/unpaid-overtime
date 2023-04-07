@@ -9,7 +9,7 @@ body {
     text-align: center;
 
     image-rendering: pixelated;
-    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/blissful.png');
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/betaward.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -91,6 +91,7 @@ button:hover:after {
 .character {
     image-rendering: pixelated;
     height: 40%;
+    position:sticky
 
 }
 
