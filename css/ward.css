@@ -7,6 +7,7 @@ body {
     zoom: 150%;
     font-family: RD;
     text-align: center;
+    overflow:hidden;
 
     image-rendering: pixelated;
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/betaward.gif');
