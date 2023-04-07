@@ -1,7 +1,7 @@
 import RDAudio from './audio.js'
 
 function loadWard(wardObject) {
-    if (localStorage.getItem('playBgm')!==false) {
+    if (localStorage.getItem('playBgm')!==true) {
         const bgm = new Audio('../../assets/music/track1.mp3')
         bgm.volume = 0.25
         bgm.loop = true
