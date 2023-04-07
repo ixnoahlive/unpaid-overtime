@@ -1,4 +1,4 @@
-import RDAudio from '/audio.js'
+import RDAudio from './audio.js'
 
 function loadWard(wardObject) {
     if (localStorage.getItem('playBgm')!==false) {
