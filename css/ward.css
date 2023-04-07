@@ -16,14 +16,14 @@ body {
     background-position: center;
 
     text-shadow:
-    -2px -2px 0 #000,
-     0   -2px 0 #000,
-     2px -2px 0 #000,
-     2px  0   0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-    -2px  2px 0 #000,
-    -2px  0   0 #000;
+    -2px -2px 0 #202020,
+     0   -2px 0 #202020,
+     2px -2px 0 #202020,
+     2px  0   0 #202020,
+     2px  2px 0 #202020,
+     0    2px 0 #202020,
+    -2px  2px 0 #202020,
+    -2px  0   0 #202020;
 
     color: white;
 }
@@ -37,8 +37,13 @@ body {
 .level {
     height: 100%;
     margin: 5px;
-    max-width: 350px;
+    max-width: 205px;
     min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    border: 2px red solid
 }
 /* Horrid css will open issue later if theres none open it for me <3 */
 .exitlevel {
@@ -56,14 +61,14 @@ button {
     cursor: pointer;
 
     text-shadow:
-    -2px -2px 0 #000,
-     0   -2px 0 #000,
-     2px -2px 0 #000,
-     2px  0   0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-    -2px  2px 0 #000,
-    -2px  0   0 #000;
+    -2px -2px 0 #202020,
+     0   -2px 0 #202020,
+     2px -2px 0 #202020,
+     2px  0   0 #202020,
+     2px  2px 0 #202020,
+     0    2px 0 #202020,
+    -2px  2px 0 #202020,
+    -2px  0   0 #202020;
 }
 
 button:active {
@@ -91,8 +96,8 @@ button:hover:after {
 .character {
     image-rendering: pixelated;
     height: 40%;
-    position:sticky
-
+    align-self:center;
+    margin-top: 25%;
 }
 
 .master {
@@ -105,4 +110,13 @@ button:hover:after {
 a {
     text-decoration: none;
     color: white;
+}
+
+.locked {
+    filter: 
+        drop-shadow(-1px -1px 0 #ffffff)
+        drop-shadow(1px 1px 0 #ffffff)
+        drop-shadow(-1px 1px 0 #ffffff)
+        drop-shadow(1px -1px 0 #ffffff);
+    filter: brightness(0);
 }
