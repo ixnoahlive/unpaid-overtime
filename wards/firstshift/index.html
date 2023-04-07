@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/ward.css">
+        <meta property="og:image" content="https://noahthenerd.github.io/unpaid-overtime/assets/ada.png">
+        <meta property="og:title" content="Unpaid Overtime">
+        <meta property="og:description" content="A more fun & exciting way to play custom levels in Rhythm Doctor.">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" id="customCol" content="#24A4E3">
+        <link rel="icon" type="image/x-icon" href="../../assets/ada.png">
+    </head>
+    <body></body>
+
+    <script type="module">
+        import loadWard from '../../loadWard.js'
+        import loadProgress from '../../loadProgress.js'
+
+        const Ward = {
+            name: "First Shift (Shortened)",
+            author: 'ixNoah',
+            data: [
+                {type: "exit"},
+                {
+                    type: "TINES", 
+                    nickname: "FS-1", name: "TINES", id: "lugiTINES",
+                    character: "../../assets/characters/hailey.gif", 
+                    author: "lugi", 
+                    download: "https://cdn.discordapp.com/attachments/611380148431749151/693642476258459719/Andrew_Huang_Rob_Scallon_-_TINES_new.rdzip",
+                },
+                {
+                    type: "level", 
+                    nickname: "FS-2", name: "Cloissonné", id: "cyuszenoCloissonne",
+                    character: "../../assets/characters/logan.gif", 
+                    author: "Cyus & Zeno", 
+                    download: "https://cdn.discordapp.com/attachments/611380148431749151/815216398078050344/They_Might_Be_Giants_-_Cloissonne_Easy.rdzip",
+                    mustBeatPrevious: true,
+                    isBoss: false,
+                },
+                {
+                    type: "level", 
+                    nickname: "FS-3", name: "My Level", id: "authMyLevel",
+                    character: "../../assets/characters/samurai.gif", 
+                    author: "auth", 
+                    download: "https://cdn.discordapp.com/attachments/611380148431749151/820279556979294218/ALRT_-_My_Level.rdzip",
+                    mustBeatPrevious: true
+                },
+                {
+                    type: "level", 
+                    nickname: "FS-X", name: "Everybody's Circulation", id: "colonEverybodysCirculation",
+                    character: "../../assets/characters/cole.gif", 
+                    author: "Colon", 
+                    download: "https://cdn.discordapp.com/attachments/611380148431749151/835671601004937226/TMABird_-_Everybodys_Circulation.rdzip",
+                    mustBeatPrevious: true,
+                    isBoss: true,
+                },
+            ]
+        }
+        
+        loadWard(Ward)
+        //loadProgress(Ward)
+    </script>
+</html>

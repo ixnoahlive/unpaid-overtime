@@ -44,11 +44,12 @@ body {
     justify-content: flex-end;
     flex-direction: column;
 }
-/* Horrid css will open issue later if theres none open it for me <3 */
+
 .exitlevel {
     line-height: 1000%; 
     vertical-align: middle;
     text-align: center;
+    transition: 0.1s;
 }
 
 button {

@@ -34,7 +34,7 @@ function loadWard(wardObject) {
             if (level.type=="exit") { 
                 levelDiv.classList.add('exitlevel')
 
-                levelInfo.innerHTML = `<a href="">Exit Ward</a><br><button>Copy All</button>`
+                levelInfo.innerHTML = `<a href="#">Exit Ward</a><br><button>Copy All</button>`
 
                 levelInfo.firstChild.addEventListener('click', () => {
                     RDAudio.TransitionIn.play()
