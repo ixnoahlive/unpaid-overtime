@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/ward.css">
+        <meta property="og:image" content="https://noahthenerd.github.io/unpaid-overtime/assets/ada.png">
+        <meta property="og:title" content="Unpaid Overtime">
+        <meta property="og:description" content="A more fun & exciting way to play custom levels in Rhythm Doctor.">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" id="customCol" content="#24A4E3">
+        <link rel="icon" type="image/x-icon" href="../../assets/ada.png">
+    </head>
+    <body>
+    </body>
+
+    <script type="module">
+        import loadWard from '../../loadWard.js'
+        import loadProgress from '../../loadProgress.js'
+
+        if (document.cookie!=='confirmed') alert('Please play and finish the Rhythm Doctor Story Mode before playing this, as it is referenced a ton here! You can continue if you already have.')
+        document.cookie = "confirmed"
+
+        const Ward = {
+            name: "Middlesea Hospital | UO Story",
+            author: 'Unpaid Overtime',
+            data: [
+                {type: "exit"},
+                {
+                    type: "level", 
+                    nickname: "1-1", name: "Introduction", id: "ixnoahApples", // NO SPACES!!!! This is the level ID used to save ranks. Please use something 100% unique. I recommend using author name + level name.
+                    character: "../../assets/characters/ianbubble.gif", 
+                    author: "ixNoah", 
+                    download: "https://cdn.discordapp.com/attachments/611380148431749151/896356830886907904/Leon_Chang_-_apple_picking_feat._TOFUKU.rdzip",
+                },
+            ]
+        }
+        
+        loadWard(Ward)
+        //loadProgress(Ward)
+    </script>
+</html>
