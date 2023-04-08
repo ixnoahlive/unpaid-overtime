@@ -96,7 +96,7 @@ button:hover:after {
 
 .character {
     image-rendering: pixelated;
-    height: 50%;
+    height: 55%;
     align-self:center;
     margin-top: 10%;
 }
