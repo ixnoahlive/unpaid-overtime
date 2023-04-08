@@ -44,9 +44,7 @@ function addWardToScreen(ward_data) {
                     <span class="nickname">${level.nickname}</span>
                     <span class="levelname">${level.name}</span>
                     <br>
-                    <button class="pager selectPatient" id='copybutton-${level.id}'>
-                        <span>Copy Link</span>
-                    </button>
+                    <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                 </p>
                 <img class="character" src="${level.character}">
             </div>
