@@ -1,9 +1,11 @@
 # Creating A Ward
 Creating a ward is very simple with Unpaid Overtime.
 
-First, go to the `wards` folder and create one with the name of your custom ward. This will be used in the URL for the ward.
+## Creating the Files
 
-Now, make a HTML file with this text in it.
+First, go to the `wards` folder and create one with the name of your custom ward. This will be used in the URL for the ward. Inside of this folder, create a file named  `index.html` with the following contents.
+
+### HTML File Contents
 
 ```html
 <html>
@@ -41,6 +43,8 @@ Now, make a HTML file with this text in it.
     </script>
 </html>
 ```
+
+## Ward Parameters
 
 Alright, you've got your `index.html` file ready. Now for the fun part: **customization**! You can change the `name` and `author` values to whatever you'd like. Adding levels is our next step. This is done in the `data` value which is an array of objects that contain our level data.
 
