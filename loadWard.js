@@ -1,5 +1,17 @@
 import RDAudio from './audio.js'
 
+const characters = {
+    hailey: "../../assets/characters/hailey.gif",
+    logan: "../../assets/characters/logan.gif",
+    samurai: "../../assets/characters/samurai.gif",
+    cole: "../../assets/characters/cole.gif",
+}
+
+const bgs = {
+    betaward: "../../assets/bgs/betaward.gif",
+    blissful: "../../assets/bgs/blissful-borders.png",
+}
+
 function addWardToScreen(ward_data) {
     const allLinks = []
 
@@ -36,6 +48,10 @@ function addWardToScreen(ward_data) {
     // Generate each level within the ward
     for (const level of ward_data) {
         const level_template = document.createElement('template')
+        // set the character sprite if its found in the list
+        if(characters[level.character]){
+            level.character = characters[level.character]
+        }
 
         level_template.innerHTML = `
             <div class="level" id=${level.id}>
@@ -84,6 +100,16 @@ function loadWard(wardObject) {
 
         // ^ FIXME: Currently all ranks are set to B+, please use this for the demo!
         // & Actually, just ignore it for now. :shushing_face:
+        
+        // set the background (if it exists)
+        if (wardObject.bg){
+            if(bgs[wardObject.bg]){
+                wardObject.bg = bgs[wardObject.bg]
+            }
+            document.body.style['background-image'] = "linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('"+wardObject.bg+"')"
+        } else {
+            console.log("BG not found, using betaward!")
+        }
 
         addWardToScreen(wardObject.data)
     } else {
