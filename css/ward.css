@@ -10,7 +10,7 @@ body {
     overflow:hidden;
 
     image-rendering: pixelated;
-    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/images/betaward.gif');
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../assets/bgs/betaward.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
