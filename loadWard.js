@@ -12,7 +12,12 @@ const bgs = {
     blissful: "../../assets/bgs/blissful-borders.png",
 }
 
-function addWardToScreen(ward_data) {
+/**
+ * Loads a ward
+ * @param {array} ward_data 
+ * @param {boolean} isMiddlesea Reserved for official content, breaks community creations.. 
+ */
+function addWardToScreen(ward_data, isMiddlesea) {
     const allLinks = []
 
     // Generate the content shared between all wards
@@ -37,8 +42,8 @@ function addWardToScreen(ward_data) {
     const master = document.querySelector('.master')
 
     master.querySelector('#exitWard').addEventListener('click', () => {
-        RDAudio.TransitionIn.play()
-        setTimeout(() => { window.location = "../../" }, 1200)
+        if (isMiddlesea) {RDAudio.ms.msTransitionIn.play()} else {RDAudio.TransitionIn.play()}
+        setTimeout(() => { window.location = `${isMiddlesea ? '':'../'}../../` }, 1200)
     })
 
     master.querySelector('#copyAll').addEventListener('click', () => {
@@ -50,7 +55,7 @@ function addWardToScreen(ward_data) {
         const level_template = document.createElement('template')
         // set the character sprite if its found in the list
         if(characters[level.character]){
-            level.character = characters[level.character]
+            level.character = characters[isMiddlesea ? level.character : `../${level.character}`]
         }
 
         level_template.innerHTML = `
@@ -62,7 +67,7 @@ function addWardToScreen(ward_data) {
                     <br>
                     <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                 </p>
-                <img class="character" src="${level.character}">
+                <img class="character" src="${isMiddlesea ? level.character : `../${level.character}`}">
             </div>
         `
         master.querySelector('.levels').appendChild(level_template.content)
@@ -77,18 +82,23 @@ function addWardToScreen(ward_data) {
 
     // Apply SFX to all configured elements
     Array.from(master.querySelectorAll('.selectPatient')).map(elem => elem.addEventListener('mouseover', () => {
-        RDAudio.SelectPatient.play()
+        if (isMiddlesea) {RDAudio.ms.msSelectPatient.play()} else {RDAudio.SelectPatient.play()}
     }))
 
     Array.from(master.querySelectorAll('.pager')).map(elem => elem.addEventListener('click', () => {
-        RDAudio.PagerButton.play()
+        if (isMiddlesea) {RDAudio.ms.msPagerButton.play()} else {RDAudio.PagerButton.play()}
     }))
 }
 
-function loadWard(wardObject) {
+/**
+ * Loads a ward
+ * @param {object} wardObject
+ * @param {boolean} isMiddlesea Reserved for official content, breaks community creations.. 
+ */
+function loadWard(wardObject, isMiddlesea) {
     let bgmSettings = localStorage.getItem('playBgm')
     if (bgmSettings) {
-        const bgm = new Audio('../../assets/music/track1.mp3')
+        const bgm = new Audio(`${isMiddlesea ? '' : '../'}../../assets/music/track1.mp3`)
         bgm.volume = 0.25
         bgm.loop = true
         bgm.play() //du dudududu  dudu    dudududu

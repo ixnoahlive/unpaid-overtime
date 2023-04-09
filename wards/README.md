@@ -1,6 +1,8 @@
 # Creating A Ward
 Creating a ward is very simple with Unpaid Overtime.
 
+**⚠ OUTDATED, THIS GUIDE IS YET TO BE UPDATED!!!**
+
 ## Creating the Files
 
 First, go to the `wards` folder and create one with the name of your custom ward. This will be used in the URL for the ward. Inside of this folder, create a file named  `index.html` with the following contents.
