@@ -1,65 +1,72 @@
-# Creating A Ward
-Creating a ward is very simple with Unpaid Overtime.
+# Documentation (WIP)
+Creating a ward takes like a minute, and this document will help you do just that.
 
-**⚠ OUTDATED, THIS GUIDE IS YET TO BE UPDATED!!!**
+First, let's make a folder for your custom ward. We'll just name ours "*Samurai's Ward*" for now.
 
-## Creating the Files
+Inside of our new folder, make two files. One named `index.html` and the other named `ward.json`. This is what you should have now.
 
-First, go to the `wards` folder and create one with the name of your custom ward. This will be used in the URL for the ward. Inside of this folder, create a file named  `index.html` with the following contents.
+```
+Samurai's Ward
+  ┗ index.html
+  ┗ ward.json
+```
 
-### HTML File Contents
+## index.html
+In your `index.html` file, paste the following.
 
 ```html
 <html>
-  <head>
-        <!--
-        Meta Tags, to embed it on all your favourite platforms.
-        You can customize the name & description, but the color & image should stay so people know what site is being embedded.
-        -->
-        <link rel="stylesheet" href="../../css/ward.css">
+    <head>
+        <link rel="stylesheet" href="../../../css/ward.css">
         <meta property="og:image" content="https://noahthenerd.github.io/unpaid-overtime/assets/ada.png">
         <meta property="og:title" content="Unpaid Overtime">
         <meta property="og:description" content="A more fun & exciting way to play custom levels in Rhythm Doctor.">
         <meta property="og:type" content="website">
         <meta name="theme-color" id="customCol" content="#24A4E3">
-        <link rel="icon" type="image/x-icon" href="../../assets/ada.png">
+        <link rel="icon" type="image/x-icon" href="../../../assets/ada.png">
     </head>
-    <body></body>
-  
+    <body>
+    </body>
+
     <script type="module">
-      import loadWard from '../../loadWard'
-      
-      loadWard({
-        name: "My Ward",
-        author: "Dr. Paige",
-        data: [
-            {
-                type: "level",
-                nickname: "1-1", name: "Samurai Techno", id: "rdSamuraiTechno",
-                character: "../../assets/characters/samurai.gif",
-                author: "Rhythm Doctor",
-                download: "URL HERE"
-            }
-        ]
-      })
+        import loadWard from '../../../loadWard.js'
+
+        import Ward from './ward.json' assert { type: 'json' }
+        
+        loadWard(Ward)
     </script>
 </html>
 ```
 
-## Ward Parameters
+## ward.json
+This file is where you really get to customize your ward to your liking. Let's start off with this template.
 
-Alright, you've got your `index.html` file ready. Now for the fun part: **customization**! You can change the `name` and `author` values to whatever you'd like. Adding levels is our next step. This is done in the `data` value which is an array of objects that contain our level data.
+```json
+{
+  "name":"Samurai's Ward",
+  "author":"Samurai",
+  "bg":"betaward",
+  "data":[]
+}
+```
 
-| Parameter | Description |
-| --------- | ----------- |
-| type | The type of content you want to add, currently only `level` is supported |
-| nickname | The level's nickname, something like 1-1 or 4-X |
-| name | The level's name |
-| id | The level's internal ID. Formatted as `levelauthorLevelName` with no special characters or spaces |
-| character | A path to the character to use to display for the level, a 48x48 gif |
-| author | The author of the level |
-| download | The download link for the level |
-| isBoss | Either true or false, determines whether a level is a boss level. |
-| mustBeatPrevious | Unused boolean, set to true to force the previous level to be completed to continue. |
+These are the supported parameters for the main ward info.
 
-Congrats, you've just made a ward! 
+| Parameter | Description | Value(s) |
+| --------- | ----------- | ----- |
+| name | Ward name, shown in page title. | string |
+| author | The creator of the ward | string |
+| bg | Background to use | betaward, blissful |
+
+Now, onto `data`. This will store all the levels. `data` is an array that consists of **level objects**.
+
+A **level object** can have several parameters. Required ones are marked with *.
+
+| Parameter | Description | Value |
+| type* | The type of level | `"level"` |
+| nickname* | The nickname of the level | `"1-1"` |
+| name* | The level's name | `"Samurai Techno"` |
+| id* | The level's ID | `"author:LevelName"` |
+| character* | The character to use | See below (TBA) |
+| download* | Download URL for level | `".rdzip"` |
+| foo bar | lorem ipsum | hello world |
