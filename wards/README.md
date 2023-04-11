@@ -63,6 +63,7 @@ Now, onto `data`. This will store all the levels. `data` is an array that consis
 A **level object** can have several parameters. Required ones are marked with *.
 
 | Parameter | Description | Value |
+| --------- | ----------- | ----- |
 | type* | The type of level | `"level"` |
 | nickname* | The nickname of the level | `"1-1"` |
 | name* | The level's name | `"Samurai Techno"` |
