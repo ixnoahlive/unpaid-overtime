@@ -1,23 +1,27 @@
 import RDAudio from './audio.js'
 
 const characters = {
-    hailey: "../../assets/characters/hailey.gif",
-    logan: "../../assets/characters/logan.gif",
-    samurai: "../../assets/characters/samurai.gif",
-    cole: "../../assets/characters/cole.gif",
+    hailey: "../../../assets/characters/hailey.gif",
+    insom: "../../../assets/characters/insom.gif",
+    insomalt: "../../../assets/characters/insomalt.gif",
+    ianbubble: "../../../assets/characters/ianbubble.gif",
+    logan: "../../../assets/characters/logan.gif",
+    lucia: "../../../assets/characters/lucia.gif",
+    mystery: "../../../assets/characters/mystery.gif",
+    samurai: "../../../assets/characters/samurai.gif",
+    hospitalchair: "../../../assets/characters/hospitalchair.png"
 }
 
 const bgs = {
-    betaward: "../../assets/bgs/betaward.gif",
-    blissful: "../../assets/bgs/blissful-borders.png",
+    betaward: "../../../assets/bgs/betaward.gif",
+    blissful: "../../../assets/bgs/blissful-borders.png",
 }
 
 /**
  * Loads a ward
  * @param {array} ward_data 
- * @param {boolean} isMiddlesea Reserved for official content, breaks community creations.. 
  */
-function addWardToScreen(ward_data, isMiddlesea) {
+function addWardToScreen(ward_data) {
     const allLinks = []
 
     // Generate the content shared between all wards
@@ -43,7 +47,7 @@ function addWardToScreen(ward_data, isMiddlesea) {
 
     master.querySelector('#exitWard').addEventListener('click', () => {
         RDAudio.TransitionIn.play()
-        setTimeout(() => { window.location = `${isMiddlesea ? '':'../'}../../` }, 1200)
+        setTimeout(() => { window.location = `../../../` }, 1200)
     })
 
     master.querySelector('#copyAll').addEventListener('click', () => {
@@ -55,7 +59,7 @@ function addWardToScreen(ward_data, isMiddlesea) {
         const level_template = document.createElement('template')
         // set the character sprite if its found in the list
         if(characters[level.character]){
-            level.character = characters[isMiddlesea ? level.character : `../${level.character}`]
+            level.character = characters[level.character]
         }
 
         level_template.innerHTML = `
@@ -67,7 +71,7 @@ function addWardToScreen(ward_data, isMiddlesea) {
                     <br>
                     <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                 </p>
-                <img class="character" src="${isMiddlesea ? level.character : `../${level.character}`}">
+                <img class="character" src="${level.character}">
             </div>
         `
         master.querySelector('.levels').appendChild(level_template.content)
@@ -93,12 +97,11 @@ function addWardToScreen(ward_data, isMiddlesea) {
 /**
  * Loads a ward
  * @param {object} wardObject
- * @param {boolean} isMiddlesea Reserved for official content, breaks community creations.. 
  */
-function loadWard(wardObject, isMiddlesea) {
+function loadWard(wardObject) {
     let bgmSettings = localStorage.getItem('playBgm')
     if (bgmSettings) {
-        const bgm = new Audio(`${isMiddlesea ? '' : '../'}../../assets/music/track1.mp3`)
+        const bgm = new Audio(`../../../assets/music/track1.mp3`)
         bgm.volume = 0.25
         bgm.loop = true
         bgm.play() //du dudududu  dudu    dudududu

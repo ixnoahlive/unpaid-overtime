@@ -1,0 +1,13 @@
+{
+    "name":"Middlesea Hospital | UO Story",
+    "author":"Unpaid Overtime",
+    "data":[
+        {
+            "type":"level",
+            "nickname":"1-1", "name":"Introduction", "id":"uoIntroduction",
+            "character":"hospitalchair",
+            "author":"Unpaid Overtime",
+            "download":"https://cdn.discordapp.com/attachments/1093450009472684092/1094220445231890482/1-1.rdzip"
+        }
+    ]
+}

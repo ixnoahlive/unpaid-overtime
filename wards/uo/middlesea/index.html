@@ -18,19 +18,7 @@
         if (document.cookie!=='confirmed') alert('Please play and finish the Rhythm Doctor Story Mode before playing this, as it is referenced a ton here! You can continue if you already have.')
         document.cookie = "confirmed"
 
-        const Ward = {
-            name: "Middlesea Hospital | UO Story",
-            author: 'Unpaid Overtime',
-            data: [
-                {
-                    type: "level", 
-                    nickname: "1-1", name: "Introduction", id: "uoIntroduction",
-                    character: "../../assets/characters/hospitalchair.png", 
-                    author: "Unpaid Overtime", 
-                    download: "https://cdn.discordapp.com/attachments/1093450009472684092/1094220445231890482/1-1.rdzip",
-                },
-            ]
-        }
+        import Ward from './ward.json' assert { type: 'json' }
         
         loadWard(Ward)
         //loadProgress(Ward)

@@ -1,0 +1,66 @@
+{
+    "name": "THE GAUNTLET OF TERRY 🔥",
+    "author": "ixNoah",
+    "data": [
+        {
+            "type": "level",
+            "nickname": "TGOT-0",
+            "name": "Samurai eats Taco.",
+            "id": "ixnoahTaco",
+            "character": "../../assets/characters/samurai.gif",
+            "author": "ixNoah",
+            "download": "https://cdn.discordapp.com/attachments/611380148431749151/905406622527004703/ixNoah_-_Samurai_eats_Taco..rdzip",
+            "isBoss": true
+        },
+        {
+            "type": "level",
+            "nickname": "TGOT-0.7356",
+            "name": "Samurai Techno",
+            "id": "finalsdpsSamuraiTechno",
+            "character": "../../assets/characters/mystery.gif",
+            "author": "thefinals & DPS2004",
+            "download": "https://cdn.discordapp.com/attachments/611380148431749151/1022620049619558430/fizzd_-_Samurai_Techno.rdzip",
+            "isBoss": true
+        },
+        {
+            "type": "level",
+            "nickname": "TGOT-1",
+            "name": "A.U.T.M.",
+            "id": "colonAUTM",
+            "character": "../../assets/characters/mystery.gif",
+            "author": "Colon",
+            "download": "https://cdn.discordapp.com/attachments/1071274344019398748/1094240749488443433/autm.rdzip",
+            "isBoss": true
+        },
+        {
+            "type": "level",
+            "nickname": "TGOT-2",
+            "name": "Rockefeller Street (Eurobeat)",
+            "id": "cv35wforestRockefellerStreet",
+            "character": "../../assets/characters/mystery.gif",
+            "author": "CV35W & Forest",
+            "download": "https://cdn.discordapp.com/attachments/1071274344019398748/1094240749488443433/autm.rdzip",
+            "isBoss": true
+        },
+        {
+            "type": "level",
+            "nickname": "TGOT-3",
+            "name": "Classy (Night)",
+            "id": "pyrosharkClassyNightBTATMP",
+            "character": "../../assets/characters/mystery.gif",
+            "author": "pyroshark02",
+            "download": "https://cdn.discordapp.com/attachments/611380148431749151/853167470579548200/fizzd_-_Classy_Night_but_there_are_too_many_patients.rdzip",
+            "isBoss": true
+        },
+        {
+            "type": "level",
+            "nickname": "TGOT-4",
+            "name": "THE POWER OF TERRY",
+            "id": "tpot",
+            "character": "../../assets/characters/insom.gif",
+            "author": "Alot of people",
+            "download": "https://cdn.discordapp.com/attachments/611380148431749151/1056587138893877308/THE_POWER_OF_TERRY.rdzip",
+            "isBoss": true
+        }
+    ]
+}
