@@ -42,7 +42,7 @@ function addWardToScreen(ward_data, isMiddlesea) {
     const master = document.querySelector('.master')
 
     master.querySelector('#exitWard').addEventListener('click', () => {
-        if (isMiddlesea) {RDAudio.ms.msTransitionIn.play()} else {RDAudio.TransitionIn.play()}
+        RDAudio.TransitionIn.play()
         setTimeout(() => { window.location = `${isMiddlesea ? '':'../'}../../` }, 1200)
     })
 
@@ -82,11 +82,11 @@ function addWardToScreen(ward_data, isMiddlesea) {
 
     // Apply SFX to all configured elements
     Array.from(master.querySelectorAll('.selectPatient')).map(elem => elem.addEventListener('mouseover', () => {
-        if (isMiddlesea) {RDAudio.ms.msSelectPatient.play()} else {RDAudio.SelectPatient.play()}
+        RDAudio.SelectPatient.play()
     }))
 
     Array.from(master.querySelectorAll('.pager')).map(elem => elem.addEventListener('click', () => {
-        if (isMiddlesea) {RDAudio.ms.msPagerButton.play()} else {RDAudio.PagerButton.play()}
+        RDAudio.PagerButton.play()
     }))
 }
 
