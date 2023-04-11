@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "ward",
+    "title":"Ward",
+    "description": "A ward for Unpaid Overtime",
+    "type":"object",
+    "properties": {
+        "name":{
+            "description":"Name of the ward, used in document title",
+            "type":"string"
+        },
+        "author":{
+            "description": "Creator of the ward",
+            "type":"string"
+        },
+        "bg":{
+            "description": "Background for the ward",
+            "type":"string",
+            "oneOf": [
+                {"enum":["betaward","blissful"]}
+            ]
+        }
+    },
+    "required": ["name","data"]
+}
