@@ -9,6 +9,7 @@ const characters = {
     lucia: "assets/characters/lucia.gif",
     mystery: "assets/characters/mystery.gif",
     samurai: "assets/characters/samurai.gif",
+    cole: "assets/characters/cole.gif",
     hospitalchair: "assets/characters/hospitalchair.png"
 }
 
@@ -62,6 +63,9 @@ function addWardToScreen(ward_data) {
             level.character = characters[level.character]
         }
 
+        level.prequote = level.prequote || "";
+        level.postquote = level.postquote || "";
+
         level_template.innerHTML = `
             <div class="level" id=${level.id}>
                 <p>
@@ -70,6 +74,10 @@ function addWardToScreen(ward_data) {
                     <span class="levelname">${level.name}</span>
                     <br>
                     <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
+                    <br>
+                    <br>
+                    <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
+                    <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
                 </p>
                 <img class="character" src="${level.character}">
             </div>
@@ -77,6 +85,17 @@ function addWardToScreen(ward_data) {
         master.querySelector('.levels').appendChild(level_template.content)
 
         // Configure the buttons
+        master.querySelector(`#${level.id}`).addEventListener('mouseover', () => {
+            
+            var allquotes = master.querySelectorAll('.quote')
+            allquotes.forEach(quote => {
+                quote.style.display = "none"
+            });
+
+            //todo: check if level is beaten and if so, display postquote instead
+            master.querySelector(`#prequote-${level.id}`).style.display = "initial"
+        })
+
         master.querySelector(`#copybutton-${level.id}`).addEventListener('click', () => {
             navigator.clipboard.writeText(level.download)
         })

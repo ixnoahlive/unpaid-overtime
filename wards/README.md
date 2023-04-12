@@ -52,22 +52,39 @@ This file is where you really get to customize your ward to your liking. Let's s
 
 These are the supported parameters for the main ward info.
 
-| Parameter | Description | Value(s) |
-| --------- | ----------- | ----- |
-| name | Ward name, shown in page title. | string |
-| author | The creator of the ward | string |
-| bg | Background to use | betaward, blissful |
+| Parameter | Description | Value(s) | Example |
+| --------- | ----------- | ----- | -----------|
+| name | Ward name, shown in page title. | string | `"First Shift"` |
+| author | The creator of the ward | string | `"ixNoah"` |
+| bg | Background to use | betaward, blissful | `"betaward"` |
 
 Now, onto `data`. This will store all the levels. `data` is an array that consists of **level objects**.
 
-A **level object** can have several parameters. Required ones are marked with *.
+A **level object** can have several parameters. Required ones are marked with \*.
 
-| Parameter | Description | Value |
-| --------- | ----------- | ----- |
-| type* | The type of level | `"level"` |
-| nickname* | The nickname of the level | `"1-1"` |
-| name* | The level's name | `"Samurai Techno"` |
-| id* | The level's ID | `"author:LevelName"` |
-| character* | The character to use | See below (TBA) |
-| download* | Download URL for level | `".rdzip"` |
-| foo bar | lorem ipsum | hello world |
+| Parameter | Description | Value | Example |
+| --------- | ----------- | ----- | --------|
+| type\* | The type of level | level |`"level"` |
+| nickname\* | The nickname of the level | string | `"1-1"` |
+| name\* | The level's name | string | `"Samurai Techno"` |
+| author\* | The author of the level | string | `"fizzd"` |
+| id\* | The level's ID | string|  `"fizzdSamuraiTecho"` |
+| character\* | The character to use | See below | `"samurai"` |
+| prequote | Text above the character before the level is beaten | string | `"..."` |
+| postquote | Text above the character after the level is beaten | string | `"... (He seems pleased.)"` |
+| download\* | Download URL for level | string | `http://rhythmdr.com/sampleLevel.rdzip"` |
+| isBoss | Sets if the level is a boss stage | boolean | `true` |
+
+
+### Characters
+The value for `character` can be the name of a built-in character, or a link to a gif. The following characters have already been added for your convenience:
+- `hailey`
+- `insom`
+- `insomalt`
+- `ianbubble`
+- `logan`
+- `lucia`
+- `mystery`
+- `samurai`
+- `cole`
+- `hospitalchair`

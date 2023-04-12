@@ -99,6 +99,9 @@ button:hover:after {
     color: #6af3f4
 }
 
+.quote {
+    display: none
+}
 .character {
     image-rendering: pixelated;
     height: 55%;
