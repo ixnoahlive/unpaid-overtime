@@ -10,26 +10,26 @@
     <meta property="og:type" content="website">
     <meta name="theme-color" id="customCol" content="#24A4E3">
     <link rel="icon" type="image/x-icon" href="./assets/ada.png">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" id="page-style">
     <title>Unpaid Overtime - a fan project</title>
 </head>
 <body>
-    <img src="./assets/images/loop.gif" height="300" class="logo">
-    <p class="yellow">[!] work in progress [!]</p>
-    <p>
-        Welcome to Unpaid Overtime, Intern!<br/>
-        Our goal with U.O. is to make exploring custom levels more fun & exciting!<br/>
-        Check out our links down below.
-    </p>
-    <a href="https://github.com/NoahTheNerd/unpaid-overtime">GitHub</a> - <a href="https://discord.gg/auk3KmbdXg">Discord Server</a><br><br>
-    <button onclick="window.location = 'wards/custom/firstshift/'">Visit the Beta Ward!</button>
-    <br/>
-    <hr>
-    <br/>
-    <a href="https://rhythmdr.com">Official Rhythm Doctor Site</a><br><br><a href="https://7thbe.at">Official 7BG Site</a><br><br>
-    <i>Not affiliated with 7th Beat Games, this is a fan project.</i>
+    <template id="front-page">
+        <img src="./assets/images/loop.gif" height="300" class="logo">
+        <p class="yellow">[!] work in progress [!]</p>
+        <p>
+            Welcome to Unpaid Overtime, Intern!<br/>
+            Our goal with U.O. is to make exploring custom levels more fun & exciting!<br/>
+            Check out our links down below.
+        </p>
+        <a href="https://github.com/NoahTheNerd/unpaid-overtime">GitHub</a> - <a href="https://discord.gg/auk3KmbdXg">Discord Server</a><br><br>
+        <button onclick="window.location = '?ward=firstshift'">Visit the Beta Ward!</button>
+        <br/>
+        <hr>
+        <br/>
+        <a href="https://rhythmdr.com">Official Rhythm Doctor Site</a><br><br><a href="https://7thbe.at">Official 7BG Site</a><br><br>
+        <i>Not affiliated with 7th Beat Games, this is a fan project.</i>
+    </template>
 </body>
-<script type="module">
-    import loadWard from './loadWard.js'
-</script>
+<script src="script.js" type="module"></script>
 </html>

@@ -1,13 +1,18 @@
-const PagerButton = new Audio('../../../assets/sounds/sndPagerButton.mp3')
-PagerButton.volume = 0.18
+const audioInfo = {
+	PagerButton: { volume: 0.18 },
+	SelectPatient: { volume: 0.1 },
+	TransitionIn: { volume: 0.23 }
+}
 
-const SelectPatient = new Audio('../../../assets/sounds/sndSelectPatient.mp3')
-SelectPatient.volume = 0.1
+function parse(audioInfo) {
+	const RDAudio = {}
 
-const TransitionIn = new Audio('../../../assets/sounds/sndTransitionIn.mp3')
-TransitionIn.volume = 0.23
+	for (const [name, props] of Object.entries(audioInfo)) {
+		RDAudio[name] = new Audio(`assets/sounds/snd${name}.mp3`)
+		RDAudio[name].volume = props.volume
+	}
+	return RDAudio
+}
 
-console.log('Not found errors are caused by a system we use, don\'t worry about them! :D')
-
-let RDAudio = { PagerButton, SelectPatient, TransitionIn }
-export default RDAudio 
+let RDAudio = parse(audioInfo)
+export default RDAudio

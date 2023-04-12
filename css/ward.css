@@ -3,7 +3,12 @@
     src: url('../assets/fonts/main.ttf');
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     zoom: 150%;
     font-family: RD;
     text-align: center;

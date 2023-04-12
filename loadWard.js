@@ -1,20 +1,20 @@
 import RDAudio from './audio.js'
 
 const characters = {
-    hailey: "../../../assets/characters/hailey.gif",
-    insom: "../../../assets/characters/insom.gif",
-    insomalt: "../../../assets/characters/insomalt.gif",
-    ianbubble: "../../../assets/characters/ianbubble.gif",
-    logan: "../../../assets/characters/logan.gif",
-    lucia: "../../../assets/characters/lucia.gif",
-    mystery: "../../../assets/characters/mystery.gif",
-    samurai: "../../../assets/characters/samurai.gif",
-    hospitalchair: "../../../assets/characters/hospitalchair.png"
+    hailey: "assets/characters/hailey.gif",
+    insom: "assets/characters/insom.gif",
+    insomalt: "assets/characters/insomalt.gif",
+    ianbubble: "assets/characters/ianbubble.gif",
+    logan: "assets/characters/logan.gif",
+    lucia: "assets/characters/lucia.gif",
+    mystery: "assets/characters/mystery.gif",
+    samurai: "assets/characters/samurai.gif",
+    hospitalchair: "assets/characters/hospitalchair.png"
 }
 
 const bgs = {
-    betaward: "../../../assets/bgs/betaward.gif",
-    blissful: "../../../assets/bgs/blissful-borders.png",
+    betaward: "assets/bgs/betaward.gif",
+    blissful: "assets/bgs/blissful-borders.png",
 }
 
 /**
@@ -98,35 +98,43 @@ function addWardToScreen(ward_data) {
  * Loads a ward
  * @param {object} wardObject
  */
-function loadWard(wardObject) {
+async function loadWard(wardName) {
+    let wardObject
+
+    try {
+        wardObject = (await import(`./wards/custom/${wardName}.json`, { assert: { type: "json" } })).default
+    }
+    catch(error) {
+        console.log(error)
+        alert('Attempted loading a malformed ward. Please check if this ward exists and is correctly formatted.')
+        return false
+    }
+
     let bgmSettings = localStorage.getItem('playBgm')
     if (bgmSettings) {
-        const bgm = new Audio(`../../../assets/music/track1.mp3`)
+        const bgm = new Audio(`assets/music/track1.mp3`)
         bgm.volume = 0.25
         bgm.loop = true
         bgm.play() //du dudududu  dudu    dudududu
     }
 
-    if (wardObject.name && wardObject.data) {
-        // Update the page title
-        document.title = wardObject.name
+    // Update the page title
+    document.title = wardObject.name
 
-        // ^ FIXME: Currently all ranks are set to B+, please use this for the demo!
-        // & Actually, just ignore it for now. :shushing_face:
-        
-        // set the background (if it exists)
-        if (wardObject.bg){
-            if(bgs[wardObject.bg]){
-                wardObject.bg = bgs[wardObject.bg]
-            }
-            document.body.style['background-image'] = "linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('"+wardObject.bg+"')"
-        } else {
-            console.log("BG not found, using betaward!")
+    // ^ FIXME: Currently all ranks are set to B+, please use this for the demo!
+    // & Actually, just ignore it for now. :shushing_face:
+
+    // set the background (if it exists)
+    if (wardObject.bg){
+        if(bgs[wardObject.bg]){
+            wardObject.bg = bgs[wardObject.bg]
         }
-
-        addWardToScreen(wardObject.data)
+        document.body.style['background-image'] = "linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('"+wardObject.bg+"')"
     } else {
-        alert('Attempted loading a malformed ward. Please check if this ward is correctly formatted.')
+        console.log("BG not found, using betaward!")
     }
+
+    addWardToScreen(wardObject.data)
+    return true
 }
 export default loadWard
