@@ -102,7 +102,7 @@ async function loadWard(wardName) {
     let wardObject
 
     try {
-        wardObject = (await import(`./wards/custom/${wardName}.json`, { assert: { type: "json" } })).default
+        wardObject = await (await fetch(`./wards/custom/${wardName}.json`)).json()
     }
     catch(error) {
         console.log(error)
