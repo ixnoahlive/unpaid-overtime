@@ -1,20 +1,20 @@
 import RDAudio from './audio.js'
 
 const characters = {
-    hailey: "assets/characters/hailey.gif",
-    insom: "assets/characters/insom.gif",
-    insomalt: "assets/characters/insomalt.gif",
-    ianbubble: "assets/characters/ianbubble.gif",
-    logan: "assets/characters/logan.gif",
-    lucia: "assets/characters/lucia.gif",
-    mystery: "assets/characters/mystery.gif",
-    samurai: "assets/characters/samurai.gif",
-    hospitalchair: "assets/characters/hospitalchair.png"
+    hailey: "./assets/characters/hailey.gif",
+    insom: "./assets/characters/insom.gif",
+    insomalt: "./assets/characters/insomalt.gif",
+    ianbubble: "./assets/characters/ianbubble.gif",
+    logan: "./assets/characters/logan.gif",
+    lucia: "./assets/characters/lucia.gif",
+    mystery: "./assets/characters/mystery.gif",
+    samurai: "./assets/characters/samurai.gif",
+    hospitalchair: "./assets/characters/hospitalchair.png"
 }
 
 const bgs = {
-    betaward: "assets/bgs/betaward.gif",
-    blissful: "assets/bgs/blissful-borders.png",
+    betaward: "./assets/bgs/betaward.gif",
+    blissful: "./assets/bgs/blissful-borders.png",
 }
 
 /**
@@ -112,7 +112,7 @@ async function loadWard(wardName) {
 
     let bgmSettings = localStorage.getItem('playBgm')
     if (bgmSettings) {
-        const bgm = new Audio(`assets/music/track1.mp3`)
+        const bgm = new Audio(`./assets/music/track1.mp3`)
         bgm.volume = 0.25
         bgm.loop = true
         bgm.play() //du dudududu  dudu    dudududu
