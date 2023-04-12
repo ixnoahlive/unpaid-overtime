@@ -10,7 +10,9 @@ const characters = {
     mystery: "assets/characters/mystery.gif",
     samurai: "assets/characters/samurai.gif",
     cole: "assets/characters/cole.gif",
-    hospitalchair: "assets/characters/hospitalchair.png"
+    hospitalchair: "assets/characters/hospitalchair.png",
+
+    exit: "assets/characters/exit.png"
 }
 
 const bgs = {
@@ -66,23 +68,51 @@ function addWardToScreen(ward_data) {
         level.prequote = level.prequote || "";
         level.postquote = level.postquote || "";
 
-        level_template.innerHTML = `
-            <div class="level" id=${level.id}>
-                <p>
-                    ${ level.isBoss ? '<span style="color:#f652a0">Boss</span><br><br>' : '' }
-                    <span class="nickname">${level.nickname}</span>
-                    <span class="levelname">${level.name}</span>
-                    <br>
-                    <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
-                    <br>
-                    <br>
-                    <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
-                    <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
-                </p>
-                <img class="character" src="${level.character}">
-            </div>
-        `
-        master.querySelector('.levels').appendChild(level_template.content)
+        if(level.type == "level"){
+            level_template.innerHTML = `
+                <div class="level" id=${level.id}>
+                    <p>
+                        ${ level.isBoss ? '<span style="color:#f652a0">Boss</span><br><br>' : '' }
+                        <span class="nickname">${level.nickname}</span>
+                        <span class="levelname">${level.name}</span>
+                        <br>
+                        <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
+                        <br>
+                        <br>
+                        <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
+                        <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
+                    </p>
+                    <img class="character" src="${level.character}">
+                </div>
+            `
+            master.querySelector('.levels').appendChild(level_template.content)
+
+            master.querySelector(`#copybutton-${level.id}`).addEventListener('click', () => {
+                navigator.clipboard.writeText(level.download)
+            })
+        } else if (level.type == "exit"){
+            level_template.innerHTML = `
+                <div class="level" id=${level.id}>
+                    <p>
+                        <br>
+                        <button class="pager selectPatient" id='exitbutton-${level.id}'>${level.name}</button>
+                        <br>
+                        <br>
+                        <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
+                        <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
+                    </p>
+                    <img class="character" src="${level.character}">
+                </div>
+            `
+            master.querySelector('.levels').appendChild(level_template.content)
+            
+            master.querySelector(`#exitbutton-${level.id}`).addEventListener('click', () => {
+                RDAudio.TransitionIn.play()
+                setTimeout(() => { window.location = "?ward=" + level.destination }, 1200)
+            })
+        }
+
+        
 
         // Configure the buttons
         master.querySelector(`#${level.id}`).addEventListener('mouseover', () => {
@@ -94,10 +124,6 @@ function addWardToScreen(ward_data) {
 
             //todo: check if level is beaten and if so, display postquote instead
             master.querySelector(`#prequote-${level.id}`).style.display = "initial"
-        })
-
-        master.querySelector(`#copybutton-${level.id}`).addEventListener('click', () => {
-            navigator.clipboard.writeText(level.download)
         })
 
         allLinks.push(level.download)
