@@ -14,8 +14,8 @@ const characters = {
 }
 
 const bgs = {
-    betaward: "assets/bgs/betaward.gif",
-    blissful: "assets/bgs/blissful-borders.png",
+    betaward: "./assets/bgs/betaward.gif",
+    blissful: "./assets/bgs/blissful-borders.png",
 }
 
 /**
@@ -121,7 +121,7 @@ async function loadWard(wardName) {
     let wardObject
 
     try {
-        wardObject = (await import(`./wards/custom/${wardName}.json`, { assert: { type: "json" } })).default
+        wardObject = await (await fetch(`./wards/custom/${wardName}.json`)).json()
     }
     catch(error) {
         console.log(error)
@@ -131,7 +131,7 @@ async function loadWard(wardName) {
 
     let bgmSettings = localStorage.getItem('playBgm')
     if (bgmSettings) {
-        const bgm = new Audio(`assets/music/track1.mp3`)
+        const bgm = new Audio(`./assets/music/track1.mp3`)
         bgm.volume = 0.25
         bgm.loop = true
         bgm.play() //du dudududu  dudu    dudududu
