@@ -1,0 +1,143 @@
+{
+    "name": "Amen Break",
+    "author": "DPS2004",
+    "bg": "rdrts_1",
+    "data": [
+      {
+        "type": "level",
+        "nickname": "RTS1-1",
+        "name": "Journey from a Jar to the Sky",
+        "author": "Yugmodnar",
+        "id": "yugmodnarJourney",
+        "character": "samurai",
+        "download": "https://cdn.discordapp.com/attachments/1038233272334954596/1044640163290152990/mudeth_-_Journey_from_a_Jar_to_the_Sky.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-2",
+        "name": "Walkin'",
+        "author": "dreambert",
+        "id": "dreambertWalkin",
+        "character": "cole",
+        "download": "https://cdn.discordapp.com/attachments/1038233272334954596/1044797736962228304/JerryTerry_Smash_Mouth_-_Walkin_short_version.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-3",
+        "name": "Desert Bus",
+        "author": "9thCore",
+        "id": "lvl9thcoreDeserbus",
+        "prequote": "BEEP BEEP",
+        "postquote": "THANKS FOR RIDING",
+        "character": "assets/characters/desertbus.png",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1048317126726922310/desert_bus.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-4",
+        "name": "crwsox",
+        "author": "3q4a & NoMathExpectation (3n4me)",
+        "id": "lvl3n4meCrwsox",
+        "character": "assets/characters/3q4a.gif",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1046084493263511632/nosignal_-_crwsox.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-5",
+        "name": "The Starting Line",
+        "author": "DPS2004",
+        "id": "dps2004Thestartingline",
+        "character": "logan",
+        "prequote": "THIS IS",
+        "postquote": "THE STORY OF A GIRL",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1046921812568703047/Neil_Cicierega_-_The_Starting_Line.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-6",
+        "name": "Blinding Lights",
+        "author": "Alan900900900",
+        "id": "alan900900900Blindinglights",
+        "character": "cole",
+        "prequote": "WHO WANTS TO GO ON A ROOOOAD TRIP",
+        "postquote": "WHO WANTS TO GO ON A ROOOOAD TRIP",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1053013856357724190/The_Weeknd_-_Blinding_Lights.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-7",
+        "name": "レイニーブーツ",
+        "author": "jams & Pseuu (blot office)",
+        "id": "blotofficeレイニーブーツ",
+        "character": "assets/characters/jams.gif",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1047837904086507640/inabakumori_-_rainy_boots.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-8",
+        "name": "title (end of summer)",
+        "author": "Poppers & M1n3c4rt (Poprocks)",
+        "id": "poprocksTitleendofsummer",
+        "character": "hailey",
+        "prequote": "...I'm really leaving, huh?",
+        "postquote": "See ya later, Middlesea!",
+        "download": "https://cdn.discordapp.com/attachments/1038233272334954596/1048024305461641287/Louie_Zong_-_title_end_of_summer.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-9",
+        "name": "The Tide Is High",
+        "author": "Provolone",
+        "id": "provoloneThetideishigh",
+        "character": "samurai",
+        "prequote": "...",
+        "postquote": "...but I'm holding on.",
+        "download": "https://cdn.discordapp.com/attachments/1038233272334954596/1048085190695727114/Blondie_-_The_Tide_Is_High.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-10",
+        "name": "LEAVING THIS WORLD BEHIND",
+        "author": "Seve, Dee, & Maddy (NaN)",
+        "id": "nanLeavingthisworldbehind",
+        "character": "quaver",
+        "prequote": "You guys ever notice that glowy thing in the sky?",
+        "postquote": "Nothin' can stop us now!",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1048336598963605576/STARSET_-_LEAVING_THIS_WORLD_BEHIND.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-11",
+        "name": "君の夜をくれ 歌詞",
+        "author": "CrazedJack, Kin, Starry Skies, & yoshikirby26 (d28)",
+        "id": "d28君の夜をくれ歌詞",
+        "character": "lucia",
+        "download": "https://cdn.discordapp.com/attachments/1038233272334954596/1048282099989360700/Waon_MasatoFullkawa_Honpo_-.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-12",
+        "name": "Tropicanic",
+        "author": "CooMonkey",
+        "id": "coomonkeyTropicanic",
+        "character": "cockatiel",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1048987096938987570/SHK_-_Tropicanic.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1-13",
+        "name": "Starry Sky Melody",
+        "author": "thefinals",
+        "id": "thefinalsStarryskymelody",
+        "character": "cockatiel",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1048847220373467168/PolyphonicBranch_-_Starry_Sky_Melody.rdzip"
+      },
+      {
+        "type": "exit",
+        "name": "Amen Break Bonuses",
+        "id" : "amenbreak-bonus",
+        "character": "exit",
+        "destination": "rdrts/amenbreak-bonus"
+      }
+    ]
+  }

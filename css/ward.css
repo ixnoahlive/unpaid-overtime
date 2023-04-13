@@ -38,6 +38,9 @@ body {
     display: flex;
     width: 99.4%;
     height: 30vh;
+    
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 .level {

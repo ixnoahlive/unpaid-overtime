@@ -1,0 +1,70 @@
+{
+    "name": "Amen Break Bonuses",
+    "author": "DPS2004",
+    "bg": "rdrts_1",
+    "data": [
+      {
+        "type": "level",
+        "nickname": "RTS1X-1",
+        "name": "Together forever, my lovely lovely video game cartridges",
+        "author": "Cyphon & MyseIf (nil)",
+        "id": "nilTogetherforeverimnottypingallthat",
+        "character": "cole",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1047073914238541824/Camellia_-_together_forever_my_lovely_lovely_video_game_cartridges.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1X-2",
+        "name": "いかないで",
+        "author": "Tamimi",
+        "id": "tamimiいかないで",
+        "character": "logan",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1094335589597331636/Sohta_Saki_Tenma_Cover_-_Ikanaide.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1X-3",
+        "name": "samurai blj",
+        "author": "9thCore",
+        "id": "lvl9thcoreSamuraiblj",
+        "character": "samurai",
+        "download": "https://cdn.discordapp.com/attachments/1038232790371663982/1044171072053989396/samurai_blj.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1X-4",
+        "name": "Misery x CPR x Reese's Puffs x Apple Bottom Jeans",
+        "author": "Poppers",
+        "id": "poppersMiserycprreesespuffsapplebottomjeans",
+        "character": "mystery",
+        "download": "https://cdn.discordapp.com/attachments/1038232790371663982/1044445107086172253/Swagboi7_-_Misery_x_CPR_x_Reeses_Puffs_x_Apple_Bottom_Jeans.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1X-5",
+        "name": "Love The Way You Move",
+        "author": "Lunaduskjr & Arriator",
+        "id": "lunaduskjrArriator",
+        "character": "cole",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1044714997583990824/Slightly_Left_of_Centre_-_Love_The_Way_You_Move.rdzip"
+      },
+      {
+        "type": "level",
+        "nickname": "RTS1X-6",
+        "name": "Wood Man Stage",
+        "author": "MyseIf",
+        "id": "myseifWoodmanstage",
+        "character": "samurai",
+        "prequote": ">:] nice",
+        "postquote": ">:] nice",
+        "download": "https://cdn.discordapp.com/attachments/611380148431749151/1047074282179670036/Takashi_Tateishi_-_Wood_Man_Stage.rdzip"
+      },
+      {
+        "type": "exit",
+        "name": "Return",
+        "id" : "amenbreak",
+        "character": "exit",
+        "destination": "rdrts/amenbreak"
+      }
+    ]
+  }

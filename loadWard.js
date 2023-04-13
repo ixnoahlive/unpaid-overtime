@@ -10,6 +10,8 @@ const characters = {
     mystery: "assets/characters/mystery.gif",
     samurai: "assets/characters/samurai.gif",
     cole: "assets/characters/cole.gif",
+    quaver: "assets/characters/quaver.gif",
+    cockatiel: "assets/characters/cockatiel.gif",
     hospitalchair: "assets/characters/hospitalchair.png",
 
     exit: "assets/characters/exit.png"
@@ -18,6 +20,7 @@ const characters = {
 const bgs = {
     betaward: "./assets/bgs/betaward.gif",
     blissful: "./assets/bgs/blissful-borders.png",
+    rdrts_1: "./assets/bgs/rdrts_1_full.png",
 }
 
 /**
@@ -105,7 +108,7 @@ function addWardToScreen(ward_data) {
                 </div>
             `
             master.querySelector('.levels').appendChild(level_template.content)
-            
+
             master.querySelector(`#exitbutton-${level.id}`).addEventListener('click', () => {
                 RDAudio.TransitionIn.play()
                 setTimeout(() => { window.location = "?ward=" + level.destination }, 1200)
