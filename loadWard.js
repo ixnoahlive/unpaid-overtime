@@ -21,6 +21,9 @@ const bgs = {
     betaward: "./assets/bgs/betaward.gif",
     blissful: "./assets/bgs/blissful-borders.png",
     rdrts_1: "./assets/bgs/rdrts_1_full.png",
+    hospital: "./assets/bgs/hospital.png",
+    hospitalnight: "./assets/bgs/hospitalnight.png",
+    gardennight: "./assets/bgs/gardennight.png"
 }
 
 /**
