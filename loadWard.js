@@ -31,21 +31,7 @@ function addWardToScreen(ward_data) {
     const allLinks = []
 
     // Generate the content shared between all wards
-    const ward_template = document.createElement('template')
-    ward_template.innerHTML = `
-        <div class="master">
-            <div class="levels">
-                <div class="level exitlevel">
-                    <p>
-                        <a href="#" id="exitWard">Exit Ward</a>
-                        <br>
-                        <button class="pager selectPatient" id="copyAll">Copy All</button>
-                    </p>
-                </div>
-                <!-- Ward levels will be inserted here -->
-            </div>
-        </div>
-    `
+    const ward_template = document.querySelector('#custom-ward')
     document.body.appendChild(ward_template.content)
 
     // Configure the buttons
@@ -53,7 +39,7 @@ function addWardToScreen(ward_data) {
 
     master.querySelector('#exitWard').addEventListener('click', () => {
         RDAudio.TransitionIn.play()
-        setTimeout(() => { window.location = `../../../` }, 1200)
+        setTimeout(() => { window.location = window.location.href.split('?')[0] }, 1200)
     })
 
     master.querySelector('#copyAll').addEventListener('click', () => {
@@ -63,28 +49,26 @@ function addWardToScreen(ward_data) {
     // Generate each level within the ward
     for (const level of ward_data) {
         const level_template = document.createElement('template')
-        // set the character sprite if its found in the list
+
+        // Set the character sprite if it's found in the list
         if(characters[level.character]){
             level.character = characters[level.character]
         }
 
-        level.prequote = level.prequote || "";
-        level.postquote = level.postquote || "";
-
-        if(level.type == "level"){
+        if(level.type === "level"){
             level_template.innerHTML = `
                 <div class="level" id=${level.id}>
-                    <p>
-                        ${ level.isBoss ? '<span style="color:#f652a0">Boss</span><br><br>' : '' }
+                    <div>
+                        ${ level.isBoss ? '<span style="color:#f652a0">Boss</span>' : '' }
+                        <br><br>
                         <span class="nickname">${level.nickname}</span>
                         <span class="levelname">${level.name}</span>
                         <br>
                         <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                         <br>
                         <br>
-                        <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
-                        <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
-                    </p>
+                        <div class="quote" id='quote-${level.id}'></div>
+                    </div>
                     <img class="character" src="${level.character}">
                 </div>
             `
@@ -93,7 +77,9 @@ function addWardToScreen(ward_data) {
             master.querySelector(`#copybutton-${level.id}`).addEventListener('click', () => {
                 navigator.clipboard.writeText(level.download)
             })
-        } else if (level.type == "exit"){
+
+            allLinks.push(level.download)
+        } else if (level.type === "exit"){
             level_template.innerHTML = `
                 <div class="level" id=${level.id}>
                     <p>
@@ -101,8 +87,7 @@ function addWardToScreen(ward_data) {
                         <button class="pager selectPatient" id='exitbutton-${level.id}'>${level.name}</button>
                         <br>
                         <br>
-                        <span class="quote" id = 'prequote-${level.id}'>${level.prequote}</span>
-                        <span class="quote" id = 'postquote-${level.id}'>${level.postquote}</span>
+                        <div class="quote" id='quote-${level.id}'></div>
                     </p>
                     <img class="character" src="${level.character}">
                 </div>
@@ -115,21 +100,18 @@ function addWardToScreen(ward_data) {
             })
         }
 
-        
-
-        // Configure the buttons
-        master.querySelector(`#${level.id}`).addEventListener('mouseover', () => {
-            
-            var allquotes = master.querySelectorAll('.quote')
-            allquotes.forEach(quote => {
-                quote.style.display = "none"
-            });
-
+        // Configure the quotes
+        const item = master.querySelector(`#${level.id}`)
+        item.addEventListener('mouseover', () => {
             //todo: check if level is beaten and if so, display postquote instead
-            master.querySelector(`#prequote-${level.id}`).style.display = "initial"
+            const quote = item.querySelector(`#quote-${level.id}`)
+            quote.style.visibility = 'visible'
+            quote.innerHTML = level.prequote || ''
         })
 
-        allLinks.push(level.download)
+        item.addEventListener('mouseout', () => {
+            item.querySelector(`#quote-${level.id}`).style.visibility = 'hidden'
+        })
     }
 
     // Apply SFX to all configured elements
@@ -173,11 +155,11 @@ async function loadWard(wardName) {
     // & Actually, just ignore it for now. :shushing_face:
 
     // set the background (if it exists)
-    if (wardObject.bg){
-        if(bgs[wardObject.bg]){
+    if (wardObject.bg) {
+        if (bgs[wardObject.bg]) {
             wardObject.bg = bgs[wardObject.bg]
         }
-        document.body.style['background-image'] = "linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('"+wardObject.bg+"')"
+        document.body.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('${wardObject.bg}')`
     } else {
         console.log("BG not found, using betaward!")
     }
