@@ -47,6 +47,11 @@ function addWardToScreen(ward_data) {
     for (const level of ward_data) {
         const level_template = document.createElement('template')
 
+        // Set the character sprite if it's found in the list
+        if(characters[level.character]){
+            level.character = characters[level.character]
+        }
+
         if(level.type === "level"){
             level_template.innerHTML = `
                 <div class="level" id=${level.id}>
@@ -61,7 +66,7 @@ function addWardToScreen(ward_data) {
                         <br>
                         <div class="quote" id='quote-${level.id}'></div>
                     </div>
-                    <img class="character" src="${characters[level.character]}">
+                    <img class="character" src="${level.character}">
                 </div>
             `
             master.querySelector('.levels').appendChild(level_template.content)
@@ -81,7 +86,7 @@ function addWardToScreen(ward_data) {
                         <br>
                         <div class="quote" id='quote-${level.id}'></div>
                     </p>
-                    <img class="character" src="${characters[level.character]}">
+                    <img class="character" src="${level.character}">
                 </div>
             `
             master.querySelector('.levels').appendChild(level_template.content)
@@ -98,7 +103,7 @@ function addWardToScreen(ward_data) {
             //todo: check if level is beaten and if so, display postquote instead
             const quote = item.querySelector(`#quote-${level.id}`)
             quote.style.visibility = 'visible'
-            quote.innerHTML = level.prequote || '';
+            quote.innerHTML = level.prequote || ''
         })
 
         item.addEventListener('mouseout', () => {
@@ -147,12 +152,14 @@ async function loadWard(wardName) {
     // & Actually, just ignore it for now. :shushing_face:
 
     // set the background (if it exists)
-    if (!wardObject.bg) {
+    if (wardObject.bg) {
+        if (bgs[wardObject.bg]) {
+            wardObject.bg = bgs[wardObject.bg]
+        }
+        document.body.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('${wardObject.bg}')`
+    } else {
         console.log("BG not found, using betaward!")
-        wardObject.bg = 'betaward'
     }
-
-    document.body.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('${bgs[wardObject.bg]}')`
 
     addWardToScreen(wardObject.data)
     return true
