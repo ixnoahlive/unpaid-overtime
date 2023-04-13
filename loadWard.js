@@ -14,7 +14,8 @@ const characters = {
     cockatiel: "assets/characters/cockatiel.gif",
     hospitalchair: "assets/characters/hospitalchair.png",
 
-    exit: "assets/characters/exit.png"
+    exit: "assets/characters/exit.png",
+    locked: "assets/characters/locked.png"
 }
 
 const bgs = {
@@ -24,6 +25,10 @@ const bgs = {
     hospital: "./assets/bgs/hospital.png",
     hospitalnight: "./assets/bgs/hospitalnight.png",
     gardennight: "./assets/bgs/gardennight.png"
+}
+
+function shorten(string) {
+    return string.substring(0, 29).trim()+(string.length>29 ? '...' : '')
 }
 
 /**
@@ -65,7 +70,7 @@ function addWardToScreen(ward_data) {
                         ${ level.isBoss ? '<span style="color:#f652a0">Boss</span>' : '' }
                         <br><br>
                         <span class="nickname">${level.nickname}</span>
-                        <span class="levelname">${level.name}</span>
+                        <span class="levelname">${shorten(level.name)}</span>
                         <br>
                         <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                         <br>
@@ -153,6 +158,9 @@ async function loadWard(wardName) {
 
     // Update the page title
     document.title = wardObject.name
+    const root = document.querySelector(":root")
+    wardObject.color ? root.style.setProperty('--wardcolour', wardObject.color) : root.style.setProperty('--wardcolour', '#8294e566') // Writing "color" hurts my soul
+    wardObject.colour ? root.style.setProperty('--wardcolour', wardObject.colour) : root.style.setProperty('--wardcolour', '#8294e566') // repenting for my sins
 
     // ^ FIXME: Currently all ranks are set to B+, please use this for the demo!
     // & Actually, just ignore it for now. :shushing_face:

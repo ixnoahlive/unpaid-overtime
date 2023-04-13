@@ -17,8 +17,27 @@
             "description": "Background for the ward",
             "type":"string",
             "oneOf": [
-                {"enum":["betaward","blissful"]}
+                {"enum":["betaward","blissful","hospitalnight","hospital","gardennight"]}
             ]
+        },
+        "data":{
+            "description": "Data for the ward, consists of several objects",
+            "type":"array",
+            "items": {
+                "type":"object",
+                "description": "A ward data object",
+                "properties": {
+                    "^type$":{
+                        "type":"string",
+                        "description": "Type of ward data to show",
+                        "oneOf": [
+                            {"enum":["level","exit"]}
+                        ]
+                    }
+                    
+                },
+                "required":["type"]
+            }
         }
     },
     "required": ["name","data"]
