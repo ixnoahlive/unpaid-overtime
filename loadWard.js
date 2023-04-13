@@ -50,17 +50,17 @@ function addWardToScreen(ward_data) {
         if(level.type === "level"){
             level_template.innerHTML = `
                 <div class="level" id=${level.id}>
-                    <p>
-                        ${ level.isBoss ? '<span style="color:#f652a0">Boss</span><br><br>' : '' }
+                    <div>
+                        ${ level.isBoss ? '<span style="color:#f652a0">Boss</span>' : '' }
+                        <br><br>
                         <span class="nickname">${level.nickname}</span>
                         <span class="levelname">${level.name}</span>
                         <br>
                         <button class="pager selectPatient" id='copybutton-${level.id}'>Copy Link</button>
                         <br>
                         <br>
-                        <span class="quote" id='prequote-${level.id}'>${level.prequote || ''}</span>
-                        <span class="quote" id='postquote-${level.id}'>${level.postquote || ''}</span>
-                    </p>
+                        <div class="quote" id='quote-${level.id}'></div>
+                    </div>
                     <img class="character" src="${characters[level.character]}">
                 </div>
             `
@@ -79,8 +79,7 @@ function addWardToScreen(ward_data) {
                         <button class="pager selectPatient" id='exitbutton-${level.id}'>${level.name}</button>
                         <br>
                         <br>
-                        <span class="quote" id='prequote-${level.id}'>${level.prequote || ''}</span>
-                        <span class="quote" id='postquote-${level.id}'>${level.postquote || ''}</span>
+                        <div class="quote" id='quote-${level.id}'></div>
                     </p>
                     <img class="character" src="${characters[level.character]}">
                 </div>
@@ -97,11 +96,13 @@ function addWardToScreen(ward_data) {
         const item = master.querySelector(`#${level.id}`)
         item.addEventListener('mouseover', () => {
             //todo: check if level is beaten and if so, display postquote instead
-            item.querySelector(`#prequote-${level.id}`).style.display = 'initial'
+            const quote = item.querySelector(`#quote-${level.id}`)
+            quote.style.visibility = 'visible'
+            quote.innerHTML = level.prequote || '';
         })
 
         item.addEventListener('mouseout', () => {
-            item.querySelectorAll('.quote').forEach(quote => quote.style.display = 'none')
+            item.querySelector(`#quote-${level.id}`).style.visibility = 'hidden'
         })
     }
 

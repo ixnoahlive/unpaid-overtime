@@ -43,8 +43,7 @@ body {
 .level {
     height: 100%;
     margin: 5px;
-    max-width: 205px;
-    min-width: 150px;
+    width: 205px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -100,13 +99,13 @@ button:hover:after {
 }
 
 .quote {
-    display: none
+    visibility: hidden;
+    min-height: 50px;
 }
 .character {
     image-rendering: pixelated;
     height: 55%;
     align-self:center;
-    margin-top: 10%;
 }
 
 .master {
