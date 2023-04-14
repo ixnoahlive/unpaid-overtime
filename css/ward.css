@@ -76,8 +76,7 @@ body {
 .level {
     height: 100%;
     margin-left: 2vw;
-    min-width: 10vw;
-    max-width: 20vw;
+    width: 15vw;
     display: flex;
     align-items: center;
     justify-content: flex-end;

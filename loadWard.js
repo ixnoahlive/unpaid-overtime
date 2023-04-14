@@ -110,14 +110,15 @@ function addWardToScreen(ward_data) {
 
         // Configure the quotes
         const item = master.querySelector(`#${level.id}`)
-        item.addEventListener('mouseover', () => {
+        item.addEventListener('mouseenter', () => {
             //todo: check if level is beaten and if so, display postquote instead
-            const quote = item.querySelector(`#quote-${level.id}`)
-            quote.style.visibility = 'visible'
-            quote.innerHTML = level.prequote || ''
+            item.querySelector(`#quote-${level.id}`).style.visibility = 'visible'
+
+            const typewriter = new Typewriter(`#quote-${level.id}`, { delay: 45, cursor: '' })
+            typewriter.typeString(level.prequote || '').start()
         })
 
-        item.addEventListener('mouseout', () => {
+        item.addEventListener('mouseleave', () => {
             item.querySelector(`#quote-${level.id}`).style.visibility = 'hidden'
         })
     }
