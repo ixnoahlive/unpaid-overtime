@@ -69,25 +69,27 @@ body {
     height: 30vh;
     margin: 0px;
     
-    overflow-y: hidden;
+/*    overflow-y: hidden;*/
     overflow-x: auto;
 }
 
 .level {
     height: 100%;
-    margin-left: 2vw;
-    width: 15vw;
+/*    width: 15vw;*/
+    margin: 0px 5px;
+    min-width: 16vw;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
+    font-size: 12pt;
 }
 
 .exitlevel {
-    line-height: 800%; 
+/*    line-height: 800%; */
     vertical-align: middle;
     text-align: center;
-    width: 15vw;
+/*    width: 15vw;*/
     transition: 0.1s;
     white-space:nowrap;
 }
@@ -97,7 +99,7 @@ button {
     background: none;
     color: white;
     font-family: RD;
-    font-size: 14pt;
+    font-size: 1em;
     cursor: pointer;
     white-space: nowrap;
 
@@ -110,6 +112,28 @@ button {
      0    2px 0 #202020,
     -2px  2px 0 #202020,
     -2px  0   0 #202020;
+
+    /* Just to give enough space for the > < icons that appear.*/
+    min-width: 14vw;
+}
+
+.exitlevel button {
+    flex: 1;
+}
+
+@media (min-width: 1000px) {
+    .level {
+        /* Now that we have enough space, use flexbox to grow widths. */
+        min-width: 0px;
+        flex: 1 1 15vw;
+        margin: 0;
+    }
+
+    button {
+        /* No longer need minimum width to accomodate > < icons. */
+        font-size: 14pt;
+        min-width: 0px;
+    }
 }
 
 button:active {
@@ -128,23 +152,27 @@ button:hover:after {
 
 .nickname {
     color: #cbff17;
-    white-space: nowrap;
+/*    white-space: nowrap;*/
 }
 
 .levelname {
     color: #6af3f4;
-    white-space: nowrap;
+/*    white-space: nowrap;*/
 }
 
 .quote {
     visibility: hidden;
     min-height: 50px;
 }
+
 .character {
     image-rendering: pixelated;
-    height: 6vw;
+/*    height: 6vw;*/
+    width: 70%;
+    max-width: 110px;
     align-self:center;
-    position:relative
+    position: relative;
+    margin-top: -10px;
 }
 
 .master {

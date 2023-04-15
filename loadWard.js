@@ -90,13 +90,11 @@ function addWardToScreen(ward_data) {
         } else if (level.type === "exit"){
             level_template.innerHTML = `
                 <div class="level" id=${level.id}>
-                    <p>
-                        <br>
-                        <button class="pager selectPatient" id='exitbutton-${level.id}'>${level.name}</button>
-                        <br>
-                        <br>
-                        <div class="quote" id='quote-${level.id}'></div>
-                    </p>
+                    <br>
+                    <button class="pager selectPatient" id='exitbutton-${level.id}'>${level.name}</button>
+                    <br>
+                    <br>
+                    <div class="quote" id='quote-${level.id}'></div>
                     <img class="character" src="${level.character}">
                 </div>
             `
@@ -108,18 +106,24 @@ function addWardToScreen(ward_data) {
             })
         }
 
+        let typewriter;
+
         // Configure the quotes
         const item = master.querySelector(`#${level.id}`)
         item.addEventListener('mouseenter', () => {
             //todo: check if level is beaten and if so, display postquote instead
             item.querySelector(`#quote-${level.id}`).style.visibility = 'visible'
 
-            const typewriter = new Typewriter(`#quote-${level.id}`, { delay: 45, cursor: '' })
+            typewriter = new Typewriter(`#quote-${level.id}`, { delay: 45, cursor: '' })
             typewriter.typeString(level.prequote || '').start()
         })
 
         item.addEventListener('mouseleave', () => {
-            item.querySelector(`#quote-${level.id}`).style.visibility = 'hidden'
+            typewriter.pause();
+
+            const quote = item.querySelector(`#quote-${level.id}`)
+            quote.style.visibility = 'hidden'
+            quote.innerHTML = ''
         })
     }
 
