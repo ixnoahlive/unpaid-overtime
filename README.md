@@ -5,7 +5,7 @@
     <h3>🟢 Unpaid Overtime 🔴</h3>
     <p>A custom levels ward for Rhythm Doctor, no mods required.</p>
 </div>
-<hr>
+<br><hr><br>
 
 Ever wanted to have a longer story mode for Rhythm Doctor, without going through the tedious process of moving .dll files? [Unpaid Overtime](https://NoahTheNerd.github.io/unpaid-overtime) is fanmade bonus content for Rhythm Doctor that aims to add new content
 
@@ -21,6 +21,8 @@ Want to play some levels from wards? Here's some featured ones to get you starte
     - help
 
 You can play these by clicking **Copy Link** or by copying all the links. You can then import them into Rhythm Doctor's Custom Levels menu.
+
+<br><hr><br>
 
 ## 📃 Documentation
 In this section of the `README.md` file we'll be making our own custom ward in Unpaid Overtime. 
@@ -86,6 +88,8 @@ These are all supported keys for ward creation. All required ones are marked wit
 | prequote | Pre-completion quote |
 | postquote [!] | Post-completion quote |
 | destination* | A link or path to a page. (ONLY REQUIRED FOR `exit` TYPE ENTRIES |
+
+<hr>
 
 ## ⭐ Contributing
 Join [our Discord](https://discord.gg/auk3KmbdXg) if you're interested in contributing. Opening issues & pull requests is always appreciated.
